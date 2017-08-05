@@ -1,23 +1,25 @@
 before_script:
   - apt-get update -qy
 
-build_node:
-  image: node:8.1.4
-  stage: build
-  script:
-    - npm i
-    - npm run build
+cache:
+  paths:
+    - node_modules/
 
 pages:
   image: ruby:2.4.0
   stage: deploy
   script:
-    - gem install bundler middleman
+    - curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
+    - bash nodesource_setup.sh
+    - apt-get install -y nodejs build-essential
+    - npm install
+    - gem install bundler
     - bundle install
-    - bundle exec middleman build
+    - bundle exec middleman build --build-dir=public
   artifacts:
     paths:
       - public
+      - node_modules/
   only:
     - master
 
