@@ -1,0 +1,23 @@
+before_script:
+  - apt-get update -qy
+
+build_node:
+  image: node:8.1.4
+  stage: build
+  script:
+    - npm i
+    - npm run build
+
+pages:
+  image: ruby:2.4.0
+  stage: deploy
+  script:
+    - gem install bundler middleman
+    - bundle install
+    - bundle exec middleman build
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
