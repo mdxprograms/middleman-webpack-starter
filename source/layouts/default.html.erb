@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Middleman + Webpack Starter</title>
+
+    <%= stylesheet_link_tag "site.bundle" %>
+  </head>
+  <body>
+    <h1>Middleman + Webpack Starter</h1>
+
+    <%= yield %>
+
+    <%= javascript_include_tag "site.bundle" %>
+  </body>
+</html>
