@@ -1,5 +1,9 @@
 # Middleman Webpack Starter
 
+### Requirements:
+* `Ruby >= 2.4.0`
+* `Node >= 8.1.4`
+
 Clone it:
 ```sh
 $ git clone git@github.com:mdxprograms/middleman-webpack-starter.git
@@ -12,7 +16,7 @@ $ middleman init -T git@github.com:mdxprograms/middleman-webpack-starter.git .
 
 Then:
 ```sh
-$ bundle install && yarn install
+$ bundle install && npm install
 ```
 
 Serve and build
