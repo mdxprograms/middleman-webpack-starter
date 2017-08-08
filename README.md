@@ -11,7 +11,7 @@ $ git clone git@github.com:mdxprograms/middleman-webpack-starter.git
 
 Use as a template:
 ```sh
-$ middleman init -T git@github.com:mdxprograms/middleman-webpack-starter.git .
+$ middleman init -T git@github.com:mdxprograms/middleman-webpack-starter.git <project_name>
 ```
 
 Then:
