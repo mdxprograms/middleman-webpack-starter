@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var Clean = require('clean-webpack-plugin');
+/* globals __dirname */
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var Clean = require('clean-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -26,7 +27,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -40,7 +41,7 @@ module.exports = {
                 plugins: function () {
                   return [
                     require('autoprefixer')
-                  ];
+                  ]
                 }
               }
             }
@@ -58,7 +59,7 @@ module.exports = {
                 plugins: function () {
                   return [
                     require('autoprefixer')
-                  ];
+                  ]
                 }
               }
             },
@@ -71,7 +72,7 @@ module.exports = {
 
   plugins: [
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
-    // inside your code for any environment checks; UglifyJS will automatically
+    // inside your code for any environment checks UglifyJS will automatically
     // drop any unreachable code.
     new webpack.DefinePlugin({
       'process.env': {
@@ -79,6 +80,6 @@ module.exports = {
       },
     }),
     new Clean(['.tmp']),
-    new ExtractTextPlugin("assets/stylesheets/[name].bundle.css"),
+    new ExtractTextPlugin('assets/stylesheets/[name].bundle.css'),
   ],
-};
+}
